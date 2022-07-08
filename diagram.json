@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": { "builder": "pico-sdk" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -125.71, "left": -102.65, "attrs": {} }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "pico:3V3", "red", [ "v10.84", "h186.67", "v50.67" ] ],
+    [ "dht1:SDA", "pico:GP15", "green", [ "v0" ] ],
+    [ "dht1:GND", "pico:GND.1", "black", [ "v0" ] ]
+  ]
+}
